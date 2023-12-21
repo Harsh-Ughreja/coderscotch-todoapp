@@ -1,0 +1,60 @@
+import React, { FC, useEffect, useState } from "react";
+import { Switch, Text, View } from "react-native";
+import styles from "./CardStyles";
+import { Colors, moderateScale } from "../../theme";
+import { HeaderButton } from "..";
+import { Clock, Trash } from "phosphor-react-native";
+import { TaskCardPropsType } from "./Types";
+import { getDisplayTime } from "../../utils";
+
+export const TaskCard: FC<TaskCardPropsType> = ({
+    task,
+    deleteTask,
+    toggleTaskStatus,
+    index
+}) => {
+
+    const [viewFullData, setViewFullData] = useState(false);
+    const handleOnContentPress = () => {
+        setViewFullData(true);
+    }
+
+    return (
+        <View style={styles.taskCard}>
+            <Text style={styles.taskTitle}>
+                Task Title [{index + 1}]
+            </Text>
+            <Text style={styles.taskTitleValue} numberOfLines={viewFullData ? 0 : 2} onPress={handleOnContentPress}>
+                {task?.title}
+            </Text>
+            <Text style={styles.aboutTaskValue} numberOfLines={viewFullData ? 0 : 5} onPress={handleOnContentPress}>
+                {task?.about}
+            </Text>
+            <View style={styles.taskCardFooter}>
+                <View>
+                    {task?.isComplete ?
+                        <Text style={[styles.taskStatusText, styles.completedTaskText]}>COMPLETED</Text> :
+                        <Text style={[styles.taskStatusText, styles.remainingTaskText]}>REMAIN</Text>
+                    }
+                    <Text style={styles.taskDate}>
+                        <Clock size={moderateScale(10)} weight="bold" />
+                        &nbsp;&nbsp;
+                        {getDisplayTime(task?.timestamp)}</Text>
+                </View>
+                <View style={styles.cardFooterButtonContainer}>
+                    <Switch
+                        thumbColor={task?.isComplete ? Colors.primeBlue : 'grey'}
+                        value={task?.isComplete}
+                        onValueChange={() => toggleTaskStatus(task?.id)}
+                    />
+                    <HeaderButton
+                        icon={<Trash size={moderateScale(15)} weight="bold" color={Colors.red} />}
+                        onPress={() => {
+                            deleteTask(task?.id);
+                        }}
+                    />
+                </View>
+            </View>
+        </View>
+    )
+}
