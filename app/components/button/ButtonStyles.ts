@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { Colors, horizontalScale, moderateScale, verticalScale } from "../../theme";
 import { FontFamily } from "../../contants";
+import { Colors, moderateScale, verticalScale } from "../../theme";
 
 const styles = StyleSheet.create({
 
@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     primeActionButton: {
         height: verticalScale(50),
         borderRadius: 100,
-        // backgroundColor: Colors.primaryColor,
         backgroundColor: Colors.primeBlue,
         flexDirection: "row",
         justifyContent: "center",

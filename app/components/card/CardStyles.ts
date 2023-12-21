@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     taskCardFooter: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop: verticalScale(15)
+        marginTop: verticalScale(15),
+        alignItems: "flex-end",
     },
     taskStatusText: {
         fontFamily: FontFamily.defaultSemiBold,

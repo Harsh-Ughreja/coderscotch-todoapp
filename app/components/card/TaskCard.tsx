@@ -14,9 +14,9 @@ export const TaskCard: FC<TaskCardPropsType> = ({
     index
 }) => {
 
-    const [viewFullData, setViewFullData] = useState(false);
+    const [viewFullData, setViewFullData] = useState<boolean>(false);
     const handleOnContentPress = () => {
-        setViewFullData(true);
+        setViewFullData(!viewFullData);
     }
 
     return (
@@ -49,9 +49,7 @@ export const TaskCard: FC<TaskCardPropsType> = ({
                     />
                     <HeaderButton
                         icon={<Trash size={moderateScale(15)} weight="bold" color={Colors.red} />}
-                        onPress={() => {
-                            deleteTask(task?.id);
-                        }}
+                        onPress={() => deleteTask(task?.id)}
                     />
                 </View>
             </View>

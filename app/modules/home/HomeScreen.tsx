@@ -7,7 +7,7 @@ import { NewTaskScreen } from ".."
 import styles from "./HomeStyles"
 import { Images } from "../../assets"
 import { useHome } from "./useHome"
-
+import { TaskType } from "../../redux"
 
 export const HomeScreen: FC = () => {
 
@@ -31,7 +31,7 @@ export const HomeScreen: FC = () => {
                 />
                 <FlatList 
                     data={tasks}
-                    renderItem={({item, index}) => {
+                    renderItem={({item, index}: {item: TaskType, index: number}) => {
                         return (
                             <TaskCard 
                                 task={item}
@@ -42,6 +42,7 @@ export const HomeScreen: FC = () => {
                         )
                     }}
                     ListEmptyComponent={<EmptyTaskList />}
+                    keyExtractor={(item: TaskType) => item.id}
                 />
             </View>
             <NewTaskScreen
