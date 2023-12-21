@@ -1,10 +1,9 @@
 import { useFormik } from "formik";
-import * as Yup from "yup";
-import { NewTaskInitialState } from "./Types";
-import { useEffect } from "react";
-import { TaskActions, useAppDispatch } from "../../redux";
 import { Alert } from "react-native";
 import uuid from 'react-native-uuid';
+import * as Yup from "yup";
+import { TaskActions, useAppDispatch } from "../../redux";
+import { NewTaskInitialState } from "./Types";
 
 const newTaskSchema = Yup.object().shape({
     title: Yup.string()

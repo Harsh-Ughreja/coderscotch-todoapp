@@ -13,16 +13,16 @@ const TaskSlice = createSlice({
             state.tasks = [action?.payload, ...state?.tasks];
         },
         deleteTask: (state: TaskSliceStateType, action: PayloadAction<string>) => {
-            state.tasks = state?.tasks?.filter((value: TaskType) => {
-                return action?.payload != value.id;
+            state.tasks = state?.tasks?.filter((task: TaskType) => {
+                return action?.payload != task.id;
             })
         },
         toggleTaskStatus: (state: TaskSliceStateType, action: PayloadAction<string>) => {
-            state.tasks = state?.tasks?.map((value: TaskType) => {
-                if(action.payload === value.id) {
-                    value.isComplete = !value?.isComplete;
+            state.tasks = state?.tasks?.map((task: TaskType) => {
+                if(action.payload === task.id) {
+                    task.isComplete = !task?.isComplete;
                 }
-                return value;
+                return task;
             })
         },
     }

@@ -1,11 +1,11 @@
-import React, { FC, useEffect, useState } from "react";
-import { Switch, Text, View } from "react-native";
-import styles from "./CardStyles";
-import { Colors, moderateScale } from "../../theme";
-import { HeaderButton } from "..";
 import { Clock, Trash } from "phosphor-react-native";
-import { TaskCardPropsType } from "./Types";
+import React, { FC, useState } from "react";
+import { Switch, Text, View } from "react-native";
+import { HeaderButton } from "..";
+import { Colors, moderateScale } from "../../theme";
 import { getDisplayTime } from "../../utils";
+import styles from "./CardStyles";
+import { TaskCardPropsType } from "./Types";
 
 export const TaskCard: FC<TaskCardPropsType> = ({
     task,

@@ -1,4 +1,4 @@
-export const getDisplayTime = (timestamp: number) => {
+export const getDisplayTime = (timestamp: number): string => {
 
     const date = new Date(timestamp);
     const today = new Date();

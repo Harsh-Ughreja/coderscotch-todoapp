@@ -19,19 +19,19 @@
    ```bash
    npx pod-install
    ```
-2. Run and build for either OS
+4. Run and build for either OS
 
    - Run iOS app
 
-     ```bash
-     npx react-native run-ios
-     ```
+   ```bash
+   npx react-native run-ios
+   ```
 
    - Run Android app
 
-     ```bash
-     npx react-native run-android
-     ```
+   ```bash
+   npx react-native run-android
+   ```
 
    - Note: Make sure that you all installed all the other dependecies like JAVA.
 

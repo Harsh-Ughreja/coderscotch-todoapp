@@ -4,14 +4,12 @@ import styles from "./InputStyles";
 import { Colors } from "../../theme";
 import { CustomInputParamsType } from "./Types";
 
-
 export const CustomInput: FC<CustomInputParamsType> = ({
     title,
     placeholder,
     name,
     value,
     formik,
-    autoCapitalize,
     helperText,
     touched,
     error,
@@ -41,7 +39,6 @@ export const CustomInput: FC<CustomInputParamsType> = ({
                 onChangeText={handleChange(name)}
                 onBlur={handleBlur(name)}
                 value={value}
-                autoCapitalize={autoCapitalize == false ? "none" : "sentences"}
             />
             {helperText && (
                 <Text style={styles.inputFieldHelptext}>

@@ -11,7 +11,6 @@ export const CustomInputTextArea: FC<CustomInputParamsType> = ({
     name,
     value,
     formik,
-    autoCapitalize,
     helperText,
     touched,
     error,
@@ -43,7 +42,6 @@ export const CustomInputTextArea: FC<CustomInputParamsType> = ({
                 onChangeText={handleChange(name)}
                 onBlur={handleBlur(name)}
                 value={value}
-                autoCapitalize={autoCapitalize == false ? "none" : "sentences"}
                 numberOfLines={10}
                 multiline
             />

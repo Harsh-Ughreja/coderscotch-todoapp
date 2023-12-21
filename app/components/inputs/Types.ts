@@ -6,7 +6,6 @@ export interface CustomInputParamsType {
     name: string
     value: any
     formik: ReturnType<typeof useFormik>
-    autoCapitalize?: boolean
     helperText?: string,
     touched: boolean | undefined,
     error: undefined | string
